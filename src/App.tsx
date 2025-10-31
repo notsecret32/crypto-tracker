@@ -1,16 +1,17 @@
+import { Provider } from "react-redux";
+import { RouterProvider } from "react-router/dom";
+
+import { store } from "@/store";
+import { router } from "@/pages/router";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeSwitch } from "@/components/theme-switch";
 
-interface AppProps {
-  children: React.ReactNode;
-}
-
-function App({ children }: AppProps) {
+function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ThemeSwitch />
-      {children}
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Provider>
   );
 }
 
