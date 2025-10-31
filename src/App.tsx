@@ -1,11 +1,16 @@
-import { Button } from "@/components/ui/button";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeSwitch } from "@/components/theme-switch";
 
-function App() {
+interface AppProps {
+  children: React.ReactNode;
+}
+
+function App({ children }: AppProps) {
   return (
-    <div>
-      <h1>Hello, World!</h1>
-      <Button>Click me!</Button>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeSwitch />
+      {children}
+    </ThemeProvider>
   );
 }
 
