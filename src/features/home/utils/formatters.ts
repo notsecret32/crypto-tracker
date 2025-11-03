@@ -22,7 +22,7 @@ export function formatPercent(percent: number): FormatterPercent {
     }
 
     return {
-        result: `${Math.abs(percent).toString()}%`,
+        result: `${Math.abs(percent).toFixed(2)}%`,
         className,
         Icon
     }
