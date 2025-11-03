@@ -1,7 +1,7 @@
-import type { LucideIcon } from "lucide-react"
+import type { LucideIcon } from "lucide-react";
 
 export interface FormatterPercent {
-    result: string
-    className: string
-    Icon: LucideIcon
+  result: string;
+  className: string;
+  Icon: LucideIcon;
 }
