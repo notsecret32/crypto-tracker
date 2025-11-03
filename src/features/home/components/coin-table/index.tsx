@@ -1,7 +1,12 @@
+import type { Coin } from "@/features/home/types/api";
 import { DataTable } from "@/components/ui/data-table";
 
-import { columns, data } from "./columns";
+import { columns } from "./columns";
 
-export const CoinTable = () => {
+interface CoinTableProps {
+  data: Coin[];
+}
+
+export const CoinTable = ({ data }: CoinTableProps) => {
   return <DataTable columns={columns} data={data} />;
 };
